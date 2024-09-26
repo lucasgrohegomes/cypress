@@ -1,7 +1,6 @@
 {
   "name": "19-09-pg-login",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.14.2"
-  }
+    "cypress": "^13.15.0"
+  },
+  "description": ""
 }

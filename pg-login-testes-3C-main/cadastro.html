@@ -9,7 +9,44 @@
 <body>
     <div class="container">
         <h1>Cadastro</h1>
+        <p>Preencha todos os campos abaixo para se cadastrar</p>
+        <form id="formulario" onsubmit="cadastrar(event)">
+            <input type="text" placeholder="Nome" id="nome">
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Senha" id="senha">
+            <input type="password" placeholder="Confirme a senha" id="confirmaSenha">
 
+            <button id="registrar" type="submit">Cadastrar</button>
+        </form>
+        <span id="erro" style="color: red; display: none;"></span>
     </div>
+
+    <script>
+        function cadastrar(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirmaSenha').value;
+            const erro = document.getElementById('erro');
+
+            if (!nome || !email || !senha || !confirmaSenha) {
+                erro.textContent = 'Todos os campos são obrigatórios!';
+                erro.style.display = 'block';
+                return;
+            }
+
+            if (senha !== confirmaSenha) {
+                erro.textContent = 'As senhas não correspondem!';
+                erro.style.display = 'block';
+                return;
+            }
+
+            alert('Cadastro realizado com sucesso!');
+            document.getElementById('formulario').reset();
+            erro.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
